@@ -22,7 +22,10 @@ var yAxis = 1;
 var zAxis = 2;
 
 var axis = 0;
+
+// default theta
 var theta = [ 0, 0, 0 ];
+// var theta = [ 5.7, -42.6, 0 ];
 
 var thetaLoc;
 
@@ -133,6 +136,9 @@ window.onload = function init()
     
         theta[xAxis] += rotation.x;
         theta[yAxis] += rotation.y;
+
+
+        console.log({theta});
         
     });
     

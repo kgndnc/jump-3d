@@ -66,18 +66,37 @@ main()
 
 </head>
 <body>
-<canvas id="gl-canvas" width="900" "="" height="900">
-Oops ... your browser doesn't support the HTML5 canvas element
-</canvas>
 
-<div class="game-over-window">
-  <div class="game-over-window-content">
-    <h2 class="game-over-title">GAME OVER</h2>
-    <p class="game-over-score">Score: 0</p>
-    <button class="game-over-button">RESTART</button>
+<div class="canvas-wrapper">
+  <div class="game-overlay">
+    <div class="game-overlay-content">
+
+      <p>Jump 3D</p>
+      <p class="game-overlay-score" data-score="0">Score: </p>
+
+
+    </div>
+
+
   </div>
   
+  <div class="game-over-window">
+    <div class="game-over-window-content">
+      <h2 class="game-over-title">GAME OVER</h2>
+      <p class="game-over-score" data-score="0">Score: </p>
+      <button class="game-over-button">RESTART</button>
+    </div>
+    
+  </div>
+
+
+
+  <canvas id="gl-canvas" width="900" "="" height="900">
+  Oops ... your browser doesn't support the HTML5 canvas element
+  </canvas>
+
 </div>
+
 
 <br>
 
