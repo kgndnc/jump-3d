@@ -2,7 +2,11 @@
 "use strict";
 
 var canvas;
+/** @type {WebGLRenderingContext} */
 var gl;
+
+var gameOverScreen
+var restartGameButton
 
 var maximumBlockAmount = 15;
 
@@ -82,6 +86,8 @@ window.onload = function init()
     mainChar.resize(0.1);
 
     canvas = document.getElementById( "gl-canvas" );
+    gameOverScreen = document.querySelector(".game-over-window")
+    restartGameButton = document.querySelector(".game-over-button")
 
     gl = WebGLUtils.setupWebGL( canvas );
     if ( !gl ) { alert( "WebGL isn't available" ); }
@@ -179,6 +185,8 @@ window.onload = function init()
         }
        
     });
+
+    restartGameButton.addEventListener("click", restartGame)
     
    
     createRandomBlocks(maximumBlockAmount);
@@ -303,12 +311,35 @@ function render()
         }
         mainChar.upDue = mainChar.constUpDue;
         mainChar.motion.direction = 1;
-    }
+
+        
+      } 
+
     //move(-0.01,xAxis);
     //theta[axis] += 2.0;
     gl.uniform3fv(thetaLoc, theta);
     
     gl.drawArrays( gl.TRIANGLES, 0, NumVertices );
     }
+    // game over
+    else {
+      
+      showGameOverScreen()
+      
+    }
+
+
     requestAnimFrame( render );
+}
+
+
+function showGameOverScreen() {
+  gameOverScreen.style.display = "block"
+}
+
+function restartGame() {
+  mainChar.resetPos()
+  theta = [ 0, 0, 0 ];
+  gameOverScreen.style.display = "none"
+  gameStatus = true
 }
