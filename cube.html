@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <!-- saved from url=(0098)https://www.cs.unm.edu/~angel/BOOK/INTERACTIVE_COMPUTER_GRAPHICS/SEVENTH_EDITION/CODE/04/cube.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script id="vertex-shader" type="x-shader/x-vertex">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script id="vertex-shader" type="x-shader/x-vertex">
 
 attribute  vec4 vPosition;
 attribute  vec4 vColor;
@@ -59,12 +62,22 @@ main()
 <script type="text/javascript" src="./cube_files/webgl-utils.js"></script>
 <script type="text/javascript" src="cube.js"></script>
 
+<link rel="stylesheet" href="style.css">
 
-
-</head><body>
+</head>
+<body>
 <canvas id="gl-canvas" width="900" "="" height="900">
 Oops ... your browser doesn't support the HTML5 canvas element
 </canvas>
+
+<div class="game-over-window">
+  <div class="game-over-window-content">
+    <h2 class="game-over-title">GAME OVER</h2>
+    <p class="game-over-score">Score: 0</p>
+    <button class="game-over-button">RESTART</button>
+  </div>
+  
+</div>
 
 <br>
 
